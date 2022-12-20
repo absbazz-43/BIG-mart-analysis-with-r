@@ -97,3 +97,11 @@ for(i in mis_ind){
 }
 item
 
+
+###############  model building 
+
+## linear model
+names(train)
+linear_model <-  lm(Item_Outlet_Sales ~ . , data = train[,!names(train) %in% "Item_Identifier"])
+broom::tidy(linear_model)
+
